@@ -1,0 +1,99 @@
+/*
+ cube3d.css
+ slabh
+
+ Created by Accorpa.muhamed on 2015-01-27.
+ */
+
+/* WebKit and Opera browsers */
+@-webkit-keyframes spinner {
+from {
+	visibility: hidden;
+	-webkit-transform: rotateY(90deg);
+}
+to {
+	visibility: visible;
+	-webkit-transform: rotateY(0deg);
+}
+}
+
+/* all other browsers */
+@keyframes
+spinner {from {
+	visibility: hidden;
+	-moz-transform: rotateY(90deg);
+	-ms-transform: rotateY(90deg);
+	transform: rotateY(90deg);
+}
+to {
+	visibility: visible;
+	-moz-transform: rotateY(0deg);
+	-ms-transform: rotateY(0deg);
+	transform: rotateY(0deg);
+}
+}
+
+/* WebKit and Opera browsers */
+@-webkit-keyframes
+spinner-reverse {from {
+	-webkit-transform: rotateY(0deg);
+	visibility: visible;
+}
+to {
+	-webkit-transform: rotateY(-90deg);
+	visibility: hidden;
+}
+}
+
+/* all other browsers */
+@keyframes
+spinner-reverse {from {
+	-moz-transform: rotateY(0deg);
+	-ms-transform: rotateY(0deg);
+	transform: rotateY(0deg);
+	visibility: visible;
+}
+to {
+	-moz-transform: rotateY(-90deg);
+	-ms-transform: rotateY(-90deg);
+	transform: rotateY(-90deg);
+	visibility: hidden;
+}
+}
+
+body {
+	-webkit-perspective: 1200px;
+	-moz-perspective: 1200px;
+	-ms-perspective: 1200px;
+	perspective: 1200px;
+}
+
+#mainContent.spinner, #mainContent.spinner-reverse, #preloader.spinner, #preloader.spinner-reverse {
+	display: block;
+	-webkit-animation-timing-function: ease-out;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-duration: 1s;
+	-webkit-animation-fill-mode: forwards;
+	animation-iteration-count: 1;
+	animation-duration: 1s;
+	animation-fill-mode: forwards -webkit-transform-style : preserve-3d;
+	-moz-transform-style: preserve-3d;
+	-ms-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+
+#mainContent.spinner, #preloader.spinner {
+	-webkit-animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Chrome, Safari, Opera */
+	animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	-webkit-animation-name: spinner;
+	animation-name: spinner;
+	animation-fill-mode: forwards; 
+}
+
+#mainContent.spinner-reverse, #preloader.spinner-reverse {
+	-webkit-animation-timing-function: cubic-bezier(0.895, 0.03, 0.685, 0.22); /* Chrome, Safari, Opera */
+	animation-timing-function: cubic-bezier(0.895, 0.03, 0.685, 0.22);
+	-webkit-animation-name: spinner-reverse;
+	animation-name: spinner-reverse;
+	animation-fill-mode: forwards;
+}
